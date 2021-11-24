@@ -111,4 +111,5 @@ MonoBehaviour:
   onDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  colors: {fileID: 11400000, guid: 9bf9a7e278f70b74dbb7decb50e2eb18, type: 2}
   PointValue: 0
