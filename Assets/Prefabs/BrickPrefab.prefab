@@ -108,8 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae693949f13e78488ec36319c04419f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
+  brickDestroyedChannel: {fileID: 11400000, guid: c8aa17ae7cc38904289f1648e86617ff, type: 2}
+  pointValue: 0
   colors: {fileID: 11400000, guid: 9bf9a7e278f70b74dbb7decb50e2eb18, type: 2}
-  PointValue: 0

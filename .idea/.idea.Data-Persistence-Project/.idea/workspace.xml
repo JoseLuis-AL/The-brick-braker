@@ -8,9 +8,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayUIHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/BrickObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Paddle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scoreboard/PlayerScoreEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataPersistence/DataManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/BricksColorSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/EventsChannelSO/BoolEventChannelSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/DeathZone.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21J4WE1IsDIAc83lb5WhZYW25zf" />
   <component name="ProjectViewState">
@@ -21,6 +25,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -56,6 +61,17 @@
       <workItem from="1637645928470" duration="1175000" />
       <workItem from="1637737193343" duration="3725000" />
       <workItem from="1637776662833" duration="4627000" />
+      <workItem from="1637785668827" duration="9159000" />
+      <workItem from="1637819483169" duration="5749000" />
+      <workItem from="1637854078932" duration="1891000" />
+      <workItem from="1637866905958" duration="2276000" />
+      <workItem from="1637909270172" duration="487000" />
+      <workItem from="1638046342797" duration="911000" />
+      <workItem from="1639078170782" duration="2224000" />
+      <workItem from="1639090512202" duration="2486000" />
+      <workItem from="1639253285286" duration="596000" />
+      <workItem from="1639292839113" duration="290000" />
+      <workItem from="1639464069939" duration="6715000" />
     </task>
     <servers />
   </component>

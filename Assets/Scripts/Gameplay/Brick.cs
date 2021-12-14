@@ -1,43 +1,58 @@
+using System;
 using ScriptableObjects;
+using ScriptableObjects.EventsChannelSO;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Gameplay
 {
     public class Brick : MonoBehaviour
     {
-        public UnityEvent<int> onDestroyed;
+        #region Attributes ---------------------------------------------------------------------------------------------
 
-        public BricksColorSO colors;
-        public int PointValue;
+        // Events Channels ---------------------------------------------------------------------------------------------
+        [Header("Events Channels (Invoker)")] [SerializeField]
+        private IntEventChannelSO brickDestroyedChannel;
+        
+        // Points ------------------------------------------------------------------------------------------------------
+        [SerializeField] private int pointValue;
+        
+        // Colors ------------------------------------------------------------------------------------------------------
+        [SerializeField] private BricksColorSO colors;
 
-        void Start()
+        #endregion
+
+        #region Unity Methods ------------------------------------------------------------------------------------------
+
+        private void Start()
         {
             var material = GetComponent<MeshRenderer>().material;
-
-            switch (PointValue)
+            material.color = pointValue switch
             {
-                case 1 :
-                    material.color = colors.tier1;
-                    break;
-                case 2:
-                    material.color = colors.tier2;
-                    break;
-                case 5:
-                    material.color = colors.tier3;
-                    break;
-                default:
-                    material.color = colors.tierDefault;
-                    break;
-            }
+                1 => colors.tier1,
+                2 => colors.tier2,
+                5 => colors.tier3,
+                _ => colors.tierDefault
+            };
         }
+
+        #endregion
+
+        #region Unity Collision Methods --------------------------------------------------------------------------------
 
         private void OnCollisionEnter(Collision other)
         {
-            onDestroyed.Invoke(PointValue);
-        
-            //slight delay to be sure the ball have time to bounce
+            brickDestroyedChannel.RaiseEvent(pointValue);
+            
+            // Slight delay to be sure the ball have time to bounce
             Destroy(gameObject, 0.2f);
         }
+
+        #endregion
+        
+        #region Methods ------------------------------------------------------------------------------------------------
+
+        public void SetPointValue(int value) => pointValue = value;
+
+        #endregion
     }
 }
