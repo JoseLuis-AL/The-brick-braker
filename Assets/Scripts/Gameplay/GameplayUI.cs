@@ -45,6 +45,9 @@ namespace Gameplay
         {
             // Load Current Player Data --------------------------------------------------------------------------------
             _playerData = DataManager.LoadPlayerData(DataManager.CurrentPlayerDataFile);
+            
+            // Load Best Player Score ----------------------------------------------------------------------------------
+            var scoreboard = DataManager.LoadScoreboard(DataManager.ScoreboardDataFile);
 
             // Set UI --------------------------------------------------------------------------------------------------
             playerNameText.text = _playerData.name;
@@ -52,6 +55,8 @@ namespace Gameplay
             menuTitle.text = "Ready?";
             menuTitle.color = startColor;
             scoreText.text = $"Score: {_playerData.score}";
+
+            bestScoreText.text = $"Best score: {scoreboard.Player1.score}";
         }
 
         private void OnEnable()
