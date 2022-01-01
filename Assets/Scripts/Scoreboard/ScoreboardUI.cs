@@ -1,7 +1,5 @@
-using System;
-using DataPersistence;
-using ScriptableObjects.EventsChannelSO;
-using Unity.Mathematics;
+using Data_Persistence;
+using Plugins.Event_System_SO.Scripts.Base_Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,67 +9,52 @@ namespace Scoreboard
     {
         #region Attributes ---------------------------------------------------------------------------------------------
 
-        // Scoreboard data ---------------------------------------------------------------------------------------------
-        private DataManager.ScoreboardData _scoreboardData;
+        // Scoreboard entries 
+        [Header("UI Components")] [SerializeField]
+        private GameObject contentParent;
 
-        // Scoreboard entries ------------------------------------------------------------------------------------------
-        [Header("Menu Entry")] [SerializeField]
-        private GameObject content;
+        [SerializeField]
+        private GameObject scoreEntry;
+        
+        // Scoreboard data 
+        [Header("Persistent Data Files (Read & Write)")] [SerializeField]
+        private string scoreboardFile;
 
-        [SerializeField] private GameObject scoreboardEntry;
+        private readonly ScoreboardData _scoreboard = new ScoreboardData();
 
-        // Events Channels ---------------------------------------------------------------------------------------------
-        [Header("Events Channels (Listener)")] [SerializeField]
-        private VoidEventChannelSO loadStartMenuEvent;
+        #endregion -----------------------------------------------------------------------------------------------------
 
-        #endregion
-
+        
         #region Unity Methods ------------------------------------------------------------------------------------------
 
         private void Start()
         {
-            // Load scoreboard -----------------------------------------------------------------------------------------
-            _scoreboardData = DataManager.LoadScoreboard(DataManager.ScoreboardDataFile);
+            // Load scoreboard.
+            _scoreboard.LoadFromFile(scoreboardFile);
 
-            // Instantiate the prefabs ---------------------------------------------------------------------------------
-            PlayerScoreEntry playerScoreData;
-            
-            // Player 1.
-            var position = scoreboardEntry.transform.position;
-            playerScoreData = Instantiate(scoreboardEntry, position, quaternion.identity).GetComponent<PlayerScoreEntry>();
-            playerScoreData.transform.SetParent(content.transform);
-            playerScoreData.nameText.text = _scoreboardData.Player1.name;
-            playerScoreData.scoreText.text = _scoreboardData.Player1.score.ToString();
-            
-            // Player 2.
-            playerScoreData = Instantiate(scoreboardEntry, position, quaternion.identity).GetComponent<PlayerScoreEntry>();
-            playerScoreData.transform.SetParent(content.transform);
-            playerScoreData.nameText.text = _scoreboardData.Player2.name;
-            playerScoreData.scoreText.text = _scoreboardData.Player2.score.ToString();
-            
-            // Player 3.
-            playerScoreData = Instantiate(scoreboardEntry, position, quaternion.identity).GetComponent<PlayerScoreEntry>();
-            playerScoreData.transform.SetParent(content.transform);
-            playerScoreData.nameText.text = _scoreboardData.Player3.name;
-            playerScoreData.scoreText.text = _scoreboardData.Player3.score.ToString();
+            // Instantiate players.
+            InstantiatePlayerEntry(_scoreboard.player1);
+            InstantiatePlayerEntry(_scoreboard.player2);
+            InstantiatePlayerEntry(_scoreboard.player3);
         }
 
-        private void OnEnable()
-        {
-            loadStartMenuEvent.OnEventRaised += GoToStartMenuScene;
-        }
+        
 
-        private void OnDisable()
-        {
-            loadStartMenuEvent.OnEventRaised -= GoToStartMenuScene;
-        }
-
-        #endregion
-
+        #endregion-----------------------------------------------------------------------------------------------------
+        
+        
         #region Methods ------------------------------------------------------------------------------------------------
 
-        public void GoToStartMenuScene() => SceneManager.LoadScene("StartMenu");
+        private void InstantiatePlayerEntry(PlayerData playerData)
+        {
+            var position = scoreEntry.transform.position;
+            
+            var playerEntry = Instantiate(scoreEntry, position, Quaternion.identity).GetComponent<ScoreboardEntry>();
+            playerEntry.transform.SetParent(contentParent.transform);
+            playerEntry.nameTMP.text = playerData.name;
+            playerEntry.scoreTMP.text = playerData.score.ToString();
+        }
 
-        #endregion
+        #endregion -----------------------------------------------------------------------------------------------------
     }
 }

@@ -8,13 +8,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/GameplayUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scoreboard/ScoreboardEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Paddle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scoreboard/PlayerScoreEntry.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataPersistence/DataManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/BricksColorSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/EventsChannelSO/BoolEventChannelSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Feel/Transition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/DeathZone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data Persistence/ScoreboardData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21J4WE1IsDIAc83lb5WhZYW25zf" />
   <component name="ProjectViewState">
@@ -26,6 +24,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -81,6 +80,21 @@
       <workItem from="1639292839113" duration="290000" />
       <workItem from="1639464069939" duration="6715000" />
       <workItem from="1639471778303" duration="1869000" />
+      <workItem from="1640121954038" duration="202000" />
+      <workItem from="1640122450810" duration="17242000" />
+      <workItem from="1640153748500" duration="2936000" />
+      <workItem from="1640160535144" duration="4303000" />
+      <workItem from="1640201058325" duration="2273000" />
+      <workItem from="1640212285906" duration="1500000" />
+      <workItem from="1640218353608" duration="6495000" />
+      <workItem from="1640227871615" duration="1171000" />
+      <workItem from="1640324481519" duration="611000" />
+      <workItem from="1640325702184" duration="9227000" />
+      <workItem from="1640375068020" duration="3334000" />
+      <workItem from="1640386785524" duration="1865000" />
+      <workItem from="1640473688845" duration="207000" />
+      <workItem from="1640490757876" duration="3579000" />
+      <workItem from="1641001975378" duration="733000" />
     </task>
     <servers />
   </component>
@@ -91,5 +105,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

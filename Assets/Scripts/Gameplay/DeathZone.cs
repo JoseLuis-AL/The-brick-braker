@@ -1,17 +1,28 @@
-using ScriptableObjects.EventsChannelSO;
+using Plugins.Event_System_SO.Scripts;
 using UnityEngine;
 
 namespace Gameplay
 {
     public class DeathZone : MonoBehaviour
     {
-        [Header("Events Channel (Invoker)")] [SerializeField]
-        private VoidEventChannelSO ballLostChannel;
-        
+        #region Attributes ---------------------------------------------------------------------------------------------
+
+        // Game events.
+        [Header("Game Events (Invoker)")] [SerializeField]
+        private VoidGameEventSO ballLostEvent;
+
+        #endregion -----------------------------------------------------------------------------------------------------
+
+
+        #region Unity Collision Methods --------------------------------------------------------------------------------
+
         private void OnCollisionEnter(Collision other)
         {
-            Destroy(other.gameObject);
-            ballLostChannel.RaiseEvent();
+            if (!other.gameObject.CompareTag("Ball")) return;
+
+            ballLostEvent.Invoke();
         }
+
+        #endregion -----------------------------------------------------------------------------------------------------
     }
 }
